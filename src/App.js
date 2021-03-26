@@ -23,9 +23,10 @@ function App() {
 
 
 
-          <Sider></Sider>
+          
           <Content><Userlist /></Content>
-          <Sider>right sidebar</Sider>
+          <Content><Profile /></Content>
+          
         </UserState>
       </Layout>
 

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { Card, Col, Row, Tooltip } from 'antd';
+import { Card, Col, Row, Tooltip, Image } from 'antd';
 
 import 'antd/dist/antd.css';
 
@@ -28,20 +28,26 @@ const UsersList = () => {
                     ? userContext.users.map((user) => (
                         <Col xs sm md lg >
 
-                            
 
-                                <Card style='{padding: 15px}'
 
-                                    key={user.id}
-                                    hoverable
-                                    style={{ width: 240 }}
-                                    cover={<img alt="example" src={user.avatar} />}
-                                    
-                                >
-                                    <Tooltip placement="top" title={text}></Tooltip>
-                                    
-                                    <Meta title={user.first_name} description={user.email} />
-                                </Card>
+                            <Card style='{padding: 15px}'
+
+                                key={user.id}
+                                hoverable
+                                style={{
+                                    width: 200,
+                                    height: 300
+                                }}
+                                cover={<img alt="example" src={user.avatar} />}
+                                onClick={() => userContext.getProfile(user.id)}
+
+
+                            >
+
+
+                                <Meta title={user.first_name} description={user.email} />
+                                
+                            </Card>
 
 
                         </Col>
